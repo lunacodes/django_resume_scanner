@@ -25,16 +25,16 @@ def _upload_path(
     return Path("uploads", instance._meta.app_label, filename)
 
 
-class KeywordsInfo(Model):
-    """Keywords Parent Model."""
+class Keywords(Model):
+    """Keywords Model."""
 
     class Meta:
-        """Keywords Parent Model Meta."""
+        """Keywords Model Meta."""
 
-        abstract: bool = True
         verbose_name: str = "Keywords"
+        verbose_name_plural: str = "Keywords"
 
-    name = "Keywords"
+    name: str = "Keywords"
     keywords = CharField(max_length=150, default="")
     error_messages: dict[str, dict[str, str]] = {
         "keywords": {"required": "Please enter some keywords to filter by."}
@@ -46,24 +46,14 @@ class KeywordsInfo(Model):
         return str(self.name)
 
 
-class Keywords(KeywordsInfo):
-    """Keywords Model."""
+class Resume(Model):
+    """Resume Model."""
 
     class Meta:
-        """Keywords Model Meta."""
+        """Resume Model Meta."""
 
-        verbose_name: str = "Keywords"
-        verbose_name_plural: str = "Keywords"
-
-
-class ResumeInfo(Model):
-    """Resume Parent Model."""
-
-    class Meta:
-        """Resume Parent Model Meta."""
-
-        abstract: bool = True
-        verbose_name: str = "ResumeInfo"
+        verbose_name: str = "Resume"
+        verbose_name_plural: str = "Resumes"
 
     file: FileField = FileField(
         upload_to=_upload_path,
@@ -83,13 +73,3 @@ class ResumeInfo(Model):
     def __str__(self) -> str:
         """Return model name as string."""
         return str(self.name)
-
-
-class Resume(ResumeInfo):
-    """Resume Model."""
-
-    class Meta:
-        """Resume Model Meta."""
-
-        verbose_name: str = "Resume"
-        verbose_name_plural: str = "Resumes"

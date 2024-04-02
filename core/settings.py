@@ -106,24 +106,25 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
 LANGUAGE_CODE = "en-us"
-
 TIME_ZONE = "UTC"
-
 USE_I18N = True
-
 USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
+MEDIA_ROOT: Path = BASE_DIR / "uploads"
+MEDIA_URL: str = "/uploads/"
 STATIC_ROOT: Path = BASE_DIR / "staticfiles"
-STATIC_URL = "static/"
+STATIC_URL: str = "/static/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 AUTH_USER_MODEL = "accounts.CustomUser"
-LOGIN_REDIRECT_URL = "home"
-LOGOUT_REDIRECT_URL = "home"
+LOGIN_REDIRECT_URL: str = "/resume"
+LOGOUT_REDIRECT_URL: str = "/resume"
+
+# CSRF_FAILURE_VIEW: Literal["resume.views.csrf_failure"] = "resume.views.csrf_failure"

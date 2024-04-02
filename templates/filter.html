@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}
+    Filter Keywords
+{% endblock title %}
+{% block content %}
+    <center>
+        <form method="post" class="post-form keyword-filter-form">
+            {% csrf_token %}
+            <div id="div_id_keywords" class="control-group">
+                <div class="controls">
+                    <label for="{{ form.keywords.auto_id }}" class="control-label">
+                        <h2>{{ form.keywords.label }}</h2>
+                    </label>
+                    {{ form.keywords }}
+                    <p class="help-block">{{ form.keywords.help_text|safe }}</p>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-warning">Submit</button>
+        </form>
+    </center>
+{% endblock content %}

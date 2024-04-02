@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}
+    Results
+{% endblock title %}
+{% block content %}
+    {% if not resumes_exist %}
+        <p>No candidates present. Please upload some resumes to filter through</p>
+    {% elif not matches_found %}
+        <p>No candidates in the current batch matched the keywords</p>
+    {% endif %}
+    <p>
+        The table below displays each candidate's Name, Unique Score (number of unique keywords matched), and Match Count per-word. Candidates with no keyword matches are not included.
+    </p>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Candidate Name</th>
+                <th>Unique Score</th>
+                {% for keyword in key_words_with_case %}<th>{{ keyword }}</th>{% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for tablerow in table_rows %}
+                <tr>
+                    <td>
+                        <a href="{{ tablerow.candidate_url }}" target="_blank">{{ tablerow.candidate }}</a>
+                    </td>
+                    <td>{{ tablerow.unique_score }}</td>
+                    {% for key, value in tablerow.kw_matches.items %}
+                        {% with keyword as key %}
+                            {% if value > 0 %}
+                                <td>{{ value }}</td>
+                            {% else %}
+                                <td></td>
+                            {% endif %}
+                        {% endwith %}
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock content %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}
+    Export - No Data to Export
+{% endblock title %}
+{% block content %}
+    {% if not resumes_exist %}
+        <p>
+            No data to export. Please upload some resumes, then run a keyword filter. Once you've run the filter, then click Export in the nav menu.
+        </p>
+    {% else %}
+        <p>Exporting resumes.</p>
+    {% endif %}
+{% endblock content %}
