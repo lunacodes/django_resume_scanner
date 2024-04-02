@@ -1,0 +1,17 @@
+__pycache__
+.vscode/
+htmlcov/
+site/
+staticfiles/
+*CACHE/
+*.code-workspace
+*.coverage*
+*.csv
+*.pdf
+*.sh
+*.sql
+*.sqlite3
+
+.coverage
+.env
+.stylelintrc.json

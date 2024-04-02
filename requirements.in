@@ -1,0 +1,63 @@
+black
+django
+django-stubs
+# django-stubs[compatible-mypy]
+django-stubs-ext
+djlint
+flake8
+flake8-breakpoint
+flake8-comprehensions
+flake8-django
+flake8-docstrings
+flake8-plugin-utils
+flake8-print
+flake8-pyproject
+flake8-tidy-imports
+flake8-typing-imports
+isort
+mypy
+
+
+# black
+# django
+# django-braces
+# django-environ
+# django-selenium-login
+# django-stubs
+# django-stubs[compatible-mypy]
+# django-stubs-ext
+# djlint
+# factory-boy
+# flake8
+# flake8-breakpoint
+# flake8-comprehensions
+# flake8-django
+# flake8-docstrings
+# flake8-plugin-utils
+# flake8-print
+# flake8-pyproject
+# flake8-tidy-imports
+# flake8-typing-imports
+# ipython
+# isort
+# mkdocs
+# mkdocs-coverage
+# mkdocs-material
+# mkdocstrings[python]
+# mypy
+# mypy-extensions
+# pip-lock
+# pip-tools
+# pre-commit
+# pydocstyle
+# pylint-plugin-utils
+# pymupdf
+# pytest
+# pytest-cov
+# pytest-django
+# python-dotenv
+# pytweening
+# selenium
+# user_agents
+# webdriver-manager
+# wfastcgi

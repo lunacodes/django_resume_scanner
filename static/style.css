@@ -1,0 +1,225 @@
+/*  Modify resume/static/style.css to make changes here,
+    then run py -m manage collectstatic to update for live server
+*/
+
+h2,
+.h2 {
+  color: #417690;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+:focus {
+  outline-color: #79aec8;
+}
+
+nav.bg-light {
+  background: #417690 !important;
+}
+
+.navbar-light .navbar-nav .nav-link,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-brand {
+  color: white;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active:hover,
+.navbar-light .navbar-brand:hover {
+  color: #f5dd5d;
+}
+
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-brand:focus {
+  color: #f5dd5d;
+  outline-color: #f5dd5d;
+  outline-offset: 2px;
+}
+
+main {
+  overflow-x: auto;
+  padding: 1.5rem 0;
+}
+
+input {
+  background-color: var(--body-bg);
+  border-radius: 4px;
+  color: var(--body-fg);
+  margin-top: 0;
+  padding: 5px 6px;
+}
+
+[type="submit"] {
+  background: #79aec8;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+  font-size: 0.8125rem;
+  padding: 10px 15px;
+  transition: background 0.15s;
+}
+
+.btn-warning:hover,
+[type="submit"]:hover {
+  background: #417690;
+  color: white;
+}
+
+/* LOGIN FORM */
+
+.login-container {
+  --primary: #79aec8;
+  --secondary: #417690;
+  --accent: #f5dd5d;
+  --primary-fg: #fff;
+  --body-fg: #333;
+  --body-bg: #fff;
+  --body-quiet-color: #666;
+  --body-loud-color: #000;
+  --header-color: #ffc;
+  --header-branding-color: var(--accent);
+  --header-bg: var(--secondary);
+  --header-link-color: var(--primary-fg);
+  --breadcrumbs-fg: #c4dce8;
+  --breadcrumbs-link-fg: var(--body-bg);
+  --breadcrumbs-bg: var(--primary);
+  --link-fg: #447e9b;
+  --link-hover-color: #036;
+  --link-selected-fg: #5b80b2;
+  --hairline-color: #e8e8e8;
+  --border-color: #ccc;
+  --error-fg: #ba2121;
+  --message-success-bg: #dfd;
+  --message-warning-bg: #ffc;
+  --message-error-bg: #ffefef;
+  --darkened-bg: #f8f8f8;
+  --selected-bg: #e4e4e4;
+  --selected-row: #ffc;
+  --button-fg: #fff;
+  --button-bg: var(--primary);
+  --button-hover-bg: #609ab6;
+  --default-button-bg: var(--secondary);
+  --default-button-hover-bg: #205067;
+  --close-button-bg: #888;
+  --close-button-hover-bg: #747474;
+  --delete-button-bg: #ba2121;
+  --delete-button-hover-bg: #a41515;
+  --object-tools-fg: var(--button-fg);
+  --object-tools-bg: var(--close-button-bg);
+  --object-tools-hover-bg: var(--close-button-hover-bg);
+}
+
+.login {
+  height: auto;
+  padding: 20px;
+}
+
+.login-container #header {
+  background: var(--header-bg);
+  color: var(--header-color);
+  height: auto;
+  justify-content: space-between;
+  padding: 15px 16px;
+}
+
+.login-container #header h1 {
+  font-size: 1.125rem;
+  margin: 0;
+  text-align: center;
+}
+
+.login-container #header h1 a {
+  color: var(--header-link-color);
+}
+
+.login #container {
+  background: var(--body-bg);
+  border: 1px solid var(--hairline-color);
+  border-radius: 4px;
+  height: auto;
+  margin: 100px auto;
+  min-width: 300px;
+  overflow: hidden;
+  width: 28em;
+}
+
+.login .form-row {
+  padding: 4px 0;
+}
+
+.login .form-row label {
+  display: block;
+  line-height: 2em;
+  margin-bottom: 0.25rem;
+}
+
+.login .form-row #id_username,
+.login .form-row #id_password {
+  width: 100%;
+}
+
+.login .submit-row {
+  margin: 0;
+  padding: 1em 0 0;
+  text-align: center;
+}
+
+.login .password-reset-link {
+  text-align: center;
+}
+
+.container.login-container {
+  border: 1px solid var(--hairline-color);
+  border-radius: 4px;
+  height: auto;
+  margin: 20px auto;
+  min-width: 300px;
+  overflow: hidden;
+  padding: 0;
+  width: 24em;
+}
+
+.login input {
+  border: 1px solid var(--border-color);
+}
+
+.login label {
+  font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans",
+    Verdana, Arial, sans-serif;
+  font-size: 0.875rem;
+  line-height: 2em;
+}
+
+/* KEYWORDS FORM */
+
+.keyword-filter-form label {
+  display: block;
+}
+
+.keyword-filter-form input {
+  margin-bottom: 0.25rem;
+  min-width: 50%;
+}
+
+.table td {
+  border-width: 1px;
+}
+
+.table th:nth-of-type(n + 2),
+.table td:nth-of-type(n + 2) {
+  text-align: center;
+  border-color: #ddd;
+}
+
+.graph-container {
+  margin: 0 auto 2rem;
+  width: 80%;
+}
+
+.graph-container-sm {
+  margin: 0 auto 2rem;
+  width: 40%;
+}

@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="{% url 'home' %}">Resume Filter</a>
+    <button class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end"
+         id="navbarSupportedContent">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        {% if user.is_staff %}
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'admin:index' %}">Admin</a>
+          </li>
+        {% endif %}
+        {% comment %}
+        {% if user.is_superuser %}
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'metrics' %}">Metrics</a>
+          </li>
+        {% endif %}
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'upload' %}">Upload Resumes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'filter' %}">Filter</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'exportcsv' %}">Export</a>
+        </li>
+        <li class="nav-item">
+          <a id="delete_warn" class="nav-link" href="#">Delete All Data</a>
+        </li>
+        {% endcomment %}
+        {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" id="logout_link" href="{% url 'logout' %}">Logout</a>
+          </li>
+        {% else %}
+          <a class="nav-link" href="{% url 'login' %}">Login</a>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>

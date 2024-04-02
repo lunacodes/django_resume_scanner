@@ -1,0 +1,67 @@
+[tool.djlint]
+ignore = "H017"
+
+[tool.isort]
+profile = "black"
+
+[tool.mypy]
+allow_redefinition = "False"
+attr-undefined = "False"
+check_untyped_defs = "True"
+disallow_incomplete_defs = "True"
+disallow_subclassing_any = "False"
+disallow_untyped_defs = "True"
+# exclude = '[a-zA-Z_]+.migrations.|[a-zA-Z_]+.tests.|[a-zA-Z_]+.testing.'
+# exclude = '^tests'
+follow_imports = "skip"
+ignore_missing_imports = "True"
+incremental = "True"
+plugins = ["mypy_django_plugin.main"]
+show_column_numbers = "True"
+show_traceback = "True"
+strict = "True"
+strict_optional = "True"
+warn_no_return = "True"
+warn_redundant_casts = "True"
+warn_unreachable = "True"
+warn_unused_configs = "True"
+warn_unused_ignores = "True"
+
+[tool.django-stubs]
+django_settings_module = "core.settings"
+ignore_missing_model_attributes = "True"
+
+[tool.flake8]
+max-line-length = 88
+min_python_version = "3.12.0"                    # for flake8-typing-imports
+extend-ignore = ['D100', 'D107', 'E203', 'E501']
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "core.settings"
+filterwarnings = "ignore::django.utils.deprecation.RemovedInDjango50Warning"
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "serial",
+]
+addopts = """
+    --ignore-glob=_archive
+    """
+# addopts = """
+#     --ignore-glob=_archive
+#     --ignore-glob=_archive/*
+#     --ignore-glob=migrations/*
+#     --ignore-glob=*/migrations/*
+#     --cov=.
+#     --cov-report term-missing:skip-covered
+#     --cov-fail-under 100
+#     """
+
+[tool.coverage.run]
+branch = true
+omit = [
+    "manage.py ",
+    "*__init__.py",
+    "core/asgi.py",
+    "core/urls.py",
+    "core/wsgi.py",
+]
